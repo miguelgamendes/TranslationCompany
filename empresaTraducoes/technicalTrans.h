@@ -8,8 +8,9 @@
 
 class TechnicalTrans : public Translator{
 public:
-	TechnicalTrans(std::string subject);
-	int EstimateTransTime(TechnicalT text);
+	TechnicalTrans();
+	TechnicalTrans(int years, std::string name, std::string subject);
+	//int EstimateTransTime(TechnicalT text);
 private:
 	std::string domain;
 };

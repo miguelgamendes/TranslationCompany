@@ -13,7 +13,10 @@ class Translator{
 public:
 	virtual int EstimateTransTime() const;
 	float CalculateCost() const;
+
+	explicit Translator();
 	explicit Translator(int years, std::string name);
+
 protected:
 	int yearsExp;
 	std::string name;
