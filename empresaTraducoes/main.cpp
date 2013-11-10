@@ -1,9 +1,7 @@
-#include <iostream>
-
 #include "translator.h"
+#include "System.h"
 
 int main(){
-	TechnicalTrans t1;
-
+	System system;
 	return 0;
 }

@@ -77,12 +77,14 @@
     <ClCompile Include="literarytrans.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="newstrans.cpp" />
+    <ClCompile Include="System.cpp" />
     <ClCompile Include="technicaltrans.cpp" />
     <ClCompile Include="translator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LiteraryTrans.h" />
     <ClInclude Include="NewsTrans.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="TechnicalTrans.h" />
     <ClInclude Include="translator.h" />
   </ItemGroup>

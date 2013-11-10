@@ -3,24 +3,24 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
-#include "text.h"
-#include "technicalTrans.h"
-#include "literarytrans.h"
-#include "newstrans.h"
+//#include "text.h"
 
 class Translator{
 public:
-	virtual int EstimateTransTime() const;
-	float CalculateCost() const;
+	std::string GetName();
+	int GetYears();
+	//virtual int EstimateTransTime() const;
+	//float CalculateCost() const;
 
-	explicit Translator();
-	explicit Translator(int years, std::string name);
+	Translator();
+	Translator(int years, std::string name);
 
 protected:
 	int yearsExp;
 	std::string name;
-	vector<std::string> languages;
+	std::vector<std::string> languages;
 };
 
 #endif

@@ -9,3 +9,11 @@ Translator::Translator(int years, std::string name){
 	this->yearsExp = years;
 	this->name = name;
 }
+
+std::string Translator::GetName(){
+	return name;
+}
+
+int Translator::GetYears(){
+	return yearsExp;
+}
