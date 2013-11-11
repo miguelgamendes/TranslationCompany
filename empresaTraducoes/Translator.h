@@ -9,8 +9,10 @@
 
 class Translator{
 public:
-	std::string GetName();
-	int GetYears();
+	std::string GetName() const;
+	int GetYears() const;
+	void SetName(std::string name);
+	void SetYears(int years);
 	//virtual int EstimateTransTime() const;
 	//float CalculateCost() const;
 
