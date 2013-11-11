@@ -21,7 +21,7 @@ public:
 	void DisplayTranslators();
 	void DisplayOrders();
 	void AddTranslator(int years, std::string name, std::string type, std::string spec);
-	void AddOrder();
+	void AddOrder(std::string id, std::string originalLanguage, std::string finalLanguage, int max, int nWords, std::string author, std::string subject, int blocks, std::string spec);
 	void EliminateTranslator(std::string name);
 private:
 	std::vector<Translator> translators;

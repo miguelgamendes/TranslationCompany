@@ -93,8 +93,24 @@ void System::AddTranslator(int years, std::string name, std::string type, std::s
 	}
 }
 
-void System::AddOrder(){
-
+void System::AddOrder(std::string id, std::string originalLanguage, std::string finalLanguage, int max, int nWords, std::string author, std::string subject, int blocks, std::string spec){
+	if(spec == "lit"){
+		LiteraryT lt(id, originalLanguage, nWords, author, subject);
+		Order o(lt, finalLanguage, max);
+		this->orders.push_back(o);
+	}else if(spec == "tech"){
+		TechnicalT tt(id, originalLanguage, nWords, subject);
+		Order o(tt, finalLanguage, max);
+		this->orders.push_back(o);
+	}else if(spec == "poetry"){
+		PoetryT pt(id, originalLanguage, nWords, author, subject, blocks);
+		Order o(pt, finalLanguage, max);
+		this->orders.push_back(o);
+	}else if(spec == "prose"){
+		ProseT pt(id, originalLanguage, nWords, author, subject, blocks);
+		Order o(pt, finalLanguage, max);
+		this->orders.push_back(o);
+	}
 }
 
 void System::EliminateTranslator(std::string name){
