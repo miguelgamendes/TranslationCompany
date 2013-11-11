@@ -63,11 +63,13 @@ void System::LoadFromFile(){
 void System::DisplayTranslators(){
 	for(unsigned int i = 0; i < this->translators.size(); i++)
 		std::cout << std::left << std::setw(20) << this->translators[i].GetName() << std::setw(2) << this->translators[i].GetYears() << std::endl;
+	system("PAUSE");
 }
 
 void System::DisplayOrders(){
 	for(unsigned int i = 0; i < this->orders.size(); i++)
 		std::cout << this->orders[i].getMaximumDuration() << this->orders[i].getFinalLanguage() << std::endl;
+	system("PAUSE");
 }
 
 void System::AddTranslator(int years, std::string name, std::string type, std::string spec){
@@ -76,19 +78,22 @@ void System::AddTranslator(int years, std::string name, std::string type, std::s
 		NewsTrans nt(years, name, type);
 		this->translators.push_back(nt);
 		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
-		while(std::cin >> language)
+		std::cin >> language;
+		while(language.length() != 0)
 			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
 	}else if(spec == "tech"){
 		TechnicalTrans tt(years, name, type);
 		this->translators.push_back(tt);
 		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
-		while(std::cin >> language)
+		std::cin >> language;
+		while(language.length() != 0)
 			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
 	}else if(spec == "lit"){
 		LiteraryTrans lt(years, name, type);
 		this->translators.push_back(lt);
 		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
-		while(std::cin >> language)
+		std::cin >> language;
+		while(language.length() != 0)
 			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
 	}
 }
