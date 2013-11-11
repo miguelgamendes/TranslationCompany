@@ -77,21 +77,21 @@ void System::AddTranslator(int years, std::string name, std::string type, std::s
 	if(spec == "news"){
 		NewsTrans nt(years, name, type);
 		this->translators.push_back(nt);
-		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
+		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
 		std::cin >> language;
 		while(language.length() != 0)
 			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
 	}else if(spec == "tech"){
 		TechnicalTrans tt(years, name, type);
 		this->translators.push_back(tt);
-		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
+		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
 		std::cin >> language;
 		while(language.length() != 0)
 			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
 	}else if(spec == "lit"){
 		LiteraryTrans lt(years, name, type);
 		this->translators.push_back(lt);
-		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
+		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
 		std::cin >> language;
 		while(language.length() != 0)
 			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
