@@ -70,6 +70,18 @@ void System::DisplayOrders(){
 		std::cout << this->orders[i].getMaximumDuration() << this->orders[i].getFinalLanguage() << std::endl;
 }
 
+void System::AddTranslator(std::string spec){
+	if(spec == "news")
+
+	else if(spec == "tech")
+
+	else if(spec == "lit")
+}
+
+void System::AddOrder(){
+
+}
+
 void System::EliminateTranslator(std::string name){
 	for(unsigned int i = 0; i < this->translators.size(); i++)
 		if(name == this->translators[i].GetName())

@@ -7,7 +7,7 @@
 
 class NewsTrans : public Translator{
 public:
-	NewsTrans(std::string type);
+	NewsTrans(int years, std::string name, std::string type);
 private:
 	std::string type;
 };

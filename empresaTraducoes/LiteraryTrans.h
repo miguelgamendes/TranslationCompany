@@ -7,7 +7,7 @@
 
 class LiteraryTrans : public Translator{
 public:
-	LiteraryTrans(std::string type);
+	LiteraryTrans(int years, std::string name, std::string type);
 private:
 	std::string type;
 };

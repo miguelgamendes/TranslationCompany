@@ -1,5 +1,5 @@
 #include "LiteraryTrans.h"
 
-LiteraryTrans::LiteraryTrans(std::string type){
+LiteraryTrans::LiteraryTrans(int years, std:.string name, std::string type) : Translator(years, name){
 	this->type = type;
 }

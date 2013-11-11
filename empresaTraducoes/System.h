@@ -17,6 +17,8 @@ public:
 	void LoadFromFile();
 	void DisplayTranslators();
 	void DisplayOrders();
+	void AddTranslator(std::string spec);
+	void AddOrder();
 	void EliminateTranslator(std::string name);
 private:
 	std::vector<Translator> translators;
