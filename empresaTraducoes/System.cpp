@@ -70,12 +70,27 @@ void System::DisplayOrders(){
 		std::cout << this->orders[i].getMaximumDuration() << this->orders[i].getFinalLanguage() << std::endl;
 }
 
-void System::AddTranslator(std::string spec){
-	if(spec == "news")
-
-	else if(spec == "tech")
-
-	else if(spec == "lit")
+void System::AddTranslator(int years, std::string name, std::string type, std::string spec){
+	std::string language;
+	if(spec == "news"){
+		NewsTrans nt(years, name, type);
+		this->translators.push_back(nt);
+		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
+		while(std::cin >> language)
+			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
+	}else if(spec == "tech"){
+		TechnicalTrans tt(years, name, type);
+		this->translators.push_back(tt);
+		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
+		while(std::cin >> language)
+			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
+	}else if(spec == "lit"){
+		LiteraryTrans lt(years, name, type);
+		this->translators.push_back(lt);
+		std::cout << "Quais as línguas que este tradutor domina?" << std::endl << ">";
+		while(std::cin >> language)
+			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
+	}
 }
 
 void System::AddOrder(){

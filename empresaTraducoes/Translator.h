@@ -11,6 +11,7 @@ class Translator{
 public:
 	std::string GetName() const;
 	int GetYears() const;
+	std::vector<std::string> GetLanguages();
 	void SetName(std::string name);
 	void SetYears(int years);
 	//virtual int EstimateTransTime() const;

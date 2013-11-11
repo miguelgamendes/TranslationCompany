@@ -2,6 +2,9 @@
 #define SYSTEM_H
 
 #include "Translator.h"
+#include "LiteraryTrans.h"
+#include "NewsTrans.h"
+#include "technicalTrans.h"
 #include "Order.h"
 
 #include <iostream>
@@ -17,7 +20,7 @@ public:
 	void LoadFromFile();
 	void DisplayTranslators();
 	void DisplayOrders();
-	void AddTranslator(std::string spec);
+	void AddTranslator(int years, std::string name, std::string type, std::string spec);
 	void AddOrder();
 	void EliminateTranslator(std::string name);
 private:

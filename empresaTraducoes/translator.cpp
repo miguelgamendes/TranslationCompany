@@ -18,6 +18,10 @@ int Translator::GetYears() const{
 	return yearsExp;
 }
 
+std::vector<std::string> Translator::GetLanguages(){
+	return languages;
+}
+
 void Translator::SetName(std::string name){
 	this->name = name;
 }
