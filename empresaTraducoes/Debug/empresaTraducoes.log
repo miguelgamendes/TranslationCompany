@@ -1,11 +1,10 @@
-﻿Build started 11/19/2013 2:11:32 PM.
+﻿Build started 11/19/2013 2:59:51 PM.
      1>Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre1\AEDA\Projecto 1\repo\empresaTraducoes\empresaTraducoes.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\empresaTraducoes.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre1\aeda\projecto 1\repo\empresatraducoes\main.cpp(225): warning C4101: 'blocks' : unreferenced local variable
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt System.cpp
+         System.cpp
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -31,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.51
+Time Elapsed 00:00:02.02

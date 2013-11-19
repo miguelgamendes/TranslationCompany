@@ -5,9 +5,9 @@ LiteraryTrans::LiteraryTrans(int years, std::string name, std::string type) : Tr
 }
 
 void LiteraryTrans::SaveInfo(std::ofstream &ostream){
-	ostream << name << " " << yearsExp << " " << type;
+	ostream << name << ";" << yearsExp << ";" << type;
 	for(unsigned int i = 0; i < languages.size(); i++)
-		ostream << " " << languages[i];
+		ostream << ";" << languages[i];
 	ostream << std::endl;
 }
 

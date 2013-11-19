@@ -83,7 +83,7 @@ void System::AddTranslator(int years, std::string name, std::string type, std::s
 		}
 	}else if(spec == "tech"){
 		this->translators.push_back(new TechnicalTrans(years, name, type));
-		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
+		std::cout << "Quais as linguas que este tradutor domina? (\"end\" = terminar)" << std::endl << ">";
 		while(language != "end"){
 			std::cin >> language;
 			if(language != "end")
@@ -91,7 +91,7 @@ void System::AddTranslator(int years, std::string name, std::string type, std::s
 		}
 	}else if(spec == "lit"){
 		this->translators.push_back(new LiteraryTrans(years, name, type));
-		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
+		std::cout << "Quais as linguas que este tradutor domina? (\"end\" = terminar)" << std::endl << ">";
 		while(language != "end"){
 			std::cin >> language;
 			if(language != "end")

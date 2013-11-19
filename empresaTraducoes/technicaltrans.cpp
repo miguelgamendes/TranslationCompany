@@ -5,9 +5,9 @@ TechnicalTrans::TechnicalTrans(int years, std::string name, std::string domain) 
 }
 
 void TechnicalTrans::SaveInfo(std::ofstream &ostream){
-	ostream << name << " " << yearsExp << " " << domain;
+	ostream << name << ";" << yearsExp << ";" << domain;
 	for(unsigned int i = 0; i < languages.size(); i++)
-		ostream << " " << languages[i];
+		ostream << ";" << languages[i];
 	ostream << std::endl;
 }
 

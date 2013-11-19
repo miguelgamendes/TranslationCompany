@@ -5,12 +5,12 @@ NewsTrans::NewsTrans(int years, std::string name, std::string type) : Translator
 }
 
 void NewsTrans::SaveInfo(std::ofstream &ostream){
-	ostream << name << " " << yearsExp << " " << type;
+	ostream << name << ";" << yearsExp << ";" << type;
 	std::cout << languages.size();
 	system("PAUSE");
 	for(unsigned int i = 0; i < languages.size(); i++){
 		std::cout << "test";
-		ostream << " " << languages[i];
+		ostream << ";" << languages[i];
 	}
 	ostream << std::endl;
 }

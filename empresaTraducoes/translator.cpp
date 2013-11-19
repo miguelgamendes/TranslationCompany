@@ -35,7 +35,7 @@ void Translator::AddLanguage(std::string lang){
 }
 
 void Translator::SaveInfo(std::ofstream &ostream){
-	ostream << name << " " << yearsExp << " " << std::endl;
+	ostream << name << ";" << yearsExp << ";" << std::endl;
 }
 
 void Translator::Display(){
