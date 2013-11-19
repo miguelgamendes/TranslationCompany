@@ -8,6 +8,8 @@ int DisplayMenu();
 int AddMenu();
 int AddTranslatorMenu();
 int AddOrderMenu();
+int EditMenu();
+int EditTranslatorMenu();
 System transforma;
 
 int main() {
@@ -38,6 +40,9 @@ int main() {
 			break;
 		case 'b':
 			AddMenu();
+			break;
+		case 'c':
+			EditMenu();
 			break;
 		case 'q':
 			return 0;
@@ -157,6 +162,7 @@ int AddTranslatorMenu() {
 					clear = 0;
 			} while (clear != 0);
 			transforma.AddTranslator(years, name, type, "lit");
+			transforma.SaveToFile();
 			break;
 		case 'b':
 			std::cout << "Anos de experiencia: ";
@@ -166,6 +172,7 @@ int AddTranslatorMenu() {
 			std::cout << "Dominio: ";
 			std::cin >> type;
 			transforma.AddTranslator(years, name, type, "tech");
+			transforma.SaveToFile();
 			break;
 		case 'c':
 			std::cout << "Anos de experiencia: ";
@@ -179,6 +186,7 @@ int AddTranslatorMenu() {
 					clear = 0;
 			} while (clear != 0);
 			transforma.AddTranslator(years, name, type, "news");
+			transforma.SaveToFile();
 			break;
 		case 'q':
 			return 0;
@@ -230,6 +238,77 @@ int AddOrderMenu() {
 			std::cout << "Prazo da encomenda (min): ";
 			std::cin >> max;
 			transforma.AddOrder("L01", originalLanguage, finalLanguage, max, nWords, author, subject, 0, "prose");
+			break;
+		case 'q':
+			return 0;
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+int EditMenu() {
+	while (true) {
+		std::string choicet;
+		char choice;
+		do {
+			system("CLS");
+			std::cout << "###################################" << std::endl;
+			std::cout << "#                                 #" << std::endl;
+			std::cout << "#         Menu de Edicao          #" << std::endl;
+			std::cout << "#                                 #" << std::endl;
+			std::cout << "###################################" << std::endl;
+
+			std::cout << std::endl << std::endl << "a) Editar tradutor" << std::endl;
+			std::cout << "b) Editar encomenda" << std::endl;
+			std::cout << "q) Voltar ao menu principal" << std::endl << std::endl;
+			std::cout << "Input: ";
+
+			std::cin >> choicet;
+		} while (choicet.length() != 1);
+		choice = tolower(choicet[0]);
+		switch (choice) {
+		case 'a':
+			EditTranslatorMenu();
+			break;
+		case 'b':
+			break;
+		case 'q':
+			return 0;
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+int EditTranslatorMenu() {
+	while (true) {
+		std::string choicet;
+		char choice;
+		do {
+			system("CLS");
+			std::cout << "###################################" << std::endl;
+			std::cout << "#                                 #" << std::endl;
+			std::cout << "#         Editar Tradutor         #" << std::endl;
+			std::cout << "#                                 #" << std::endl;
+			std::cout << "###################################" << std::endl;
+
+			std::cout << std::endl << std::endl << "a) Editar nome" << std::endl;
+			std::cout << "b) Editar anos de experiencia" << std::endl;
+			std::cout << "q) Voltar ao menu principal" << std::endl << std::endl;
+			std::cout << "Input: ";
+
+			std::cin >> choicet;
+		} while (choicet.length() != 1);
+		choice = tolower(choicet[0]);
+		switch (choice) {
+		case 'a':
+			transforma.EditTranslator("name");
+			break;
+		case 'b':
+			transforma.EditTranslator("years");
 			break;
 		case 'q':
 			return 0;

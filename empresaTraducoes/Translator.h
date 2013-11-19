@@ -2,8 +2,10 @@
 #define TRANSLATOR_H
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "Order.h"
 
@@ -14,8 +16,11 @@ public:
 	std::vector<std::string> GetLanguages();
 	void SetName(std::string name);
 	void SetYears(int years);
-	//virtual int EstimateTransTime() const;
-	//float CalculateCost() const;
+	void AddLanguage(std::string lang);
+	//virtual int EstimateTransTime(Text text) const;
+	//float CalculateCost(Order order) const;
+	virtual void SaveInfo(std::ofstream &ostream);
+	virtual void Display();
 
 	Translator();
 	Translator(int years, std::string name);

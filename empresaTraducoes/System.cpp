@@ -10,7 +10,7 @@ void System::SaveToFile(){
 	}
 
 	for(unsigned int i = 0; i < this->translators.size(); i++){
-		ofile << this->translators[i].GetName() << " " << this->translators[i].GetYears();
+		this->translators[i]->SaveInfo(ofile);
 	}
 
 	ofile.close();
@@ -32,8 +32,7 @@ void System::LoadFromFile(){
 	while(ifile.good()){
 		ifile >> sig >> name >> s_years;
 		years = atoi(s_years.c_str());
-		Translator t(years, name);
-		this->translators.push_back(t);
+		this->translators.push_back(new Translator(years, name));
 	}
 
 	ifile.close();
@@ -62,7 +61,7 @@ void System::LoadFromFile(){
 
 void System::DisplayTranslators(){
 	for(unsigned int i = 0; i < this->translators.size(); i++)
-		std::cout << std::left << std::setw(20) << this->translators[i].GetName() << std::setw(2) << this->translators[i].GetYears() << std::endl;
+		translators[i]->Display();
 	system("PAUSE");
 }
 
@@ -75,26 +74,29 @@ void System::DisplayOrders(){
 void System::AddTranslator(int years, std::string name, std::string type, std::string spec){
 	std::string language;
 	if(spec == "news"){
-		NewsTrans nt(years, name, type);
-		this->translators.push_back(nt);
-		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
-		std::cin >> language;
-		while(language.length() != 0)
-			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
+		this->translators.push_back(new NewsTrans(years, name, type));
+		std::cout << "Quais as linguas que este tradutor domina? (\"end\" = terminar)" << std::endl << ">";
+		while(language != "end"){
+			std::cin >> language;
+			if(language != "end")
+				this->translators[this->translators.size()-1]->AddLanguage(language);
+		}
 	}else if(spec == "tech"){
-		TechnicalTrans tt(years, name, type);
-		this->translators.push_back(tt);
+		this->translators.push_back(new TechnicalTrans(years, name, type));
 		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
-		std::cin >> language;
-		while(language.length() != 0)
-			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
+		while(language != "end"){
+			std::cin >> language;
+			if(language != "end")
+				this->translators[this->translators.size()-1]->AddLanguage(language);
+		}
 	}else if(spec == "lit"){
-		LiteraryTrans lt(years, name, type);
-		this->translators.push_back(lt);
+		this->translators.push_back(new LiteraryTrans(years, name, type));
 		std::cout << "Quais as linguas que este tradutor domina?" << std::endl << ">";
-		std::cin >> language;
-		while(language.length() != 0)
-			this->translators[this->translators.size()-1].GetLanguages().push_back(language);
+		while(language != "end"){
+			std::cin >> language;
+			if(language != "end")
+				this->translators[this->translators.size()-1]->AddLanguage(language);
+		}
 	}
 }
 
@@ -120,6 +122,27 @@ void System::AddOrder(std::string id, std::string originalLanguage, std::string 
 
 void System::EliminateTranslator(std::string name){
 	for(unsigned int i = 0; i < this->translators.size(); i++)
-		if(name == this->translators[i].GetName())
+		if(name == this->translators[i]->GetName())
 			this->translators.erase(this->translators.begin() + i);
+}
+
+void System::EditTranslator(std::string element){
+	std::string nameinput;
+	int yearsinput;
+	std::cout << "Insira o nome do tradutor que pretende editar:" << std::endl << ">";
+	std::cin >> nameinput;
+	for(unsigned int i = 0; i < translators.size(); i++){
+		if(translators[i]->GetName() == nameinput)
+			if(element == "name"){
+				translators[i]->Display();
+				std::cout << "Insira o novo nome deste tradutor:" << std::endl << ">";
+				std::cin >> nameinput;
+				translators[i]->SetName(nameinput);
+			} else {
+				translators[i]->Display();
+				std::cout << "insira a nova idade deste tradutor:" << std::endl << ">";
+				std::cin >> yearsinput;
+				translators[i]->SetYears(yearsinput);
+			}
+	}
 }

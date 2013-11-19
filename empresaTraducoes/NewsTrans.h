@@ -8,6 +8,8 @@
 class NewsTrans : public Translator{
 public:
 	NewsTrans(int years, std::string name, std::string type);
+	void SaveInfo(std::ofstream &ostream);
+	void Display();
 private:
 	std::string type;
 };
