@@ -140,7 +140,7 @@ void System::EditTranslator(std::string element){
 				translators[i]->SetName(nameinput);
 			} else {
 				translators[i]->Display();
-				std::cout << "insira a nova idade deste tradutor:" << std::endl << ">";
+				std::cout << "Insira os anos de experiencia deste tradutor:" << std::endl << ">";
 				std::cin >> yearsinput;
 				translators[i]->SetYears(yearsinput);
 			}

@@ -306,9 +306,11 @@ int EditTranslatorMenu() {
 		switch (choice) {
 		case 'a':
 			transforma.EditTranslator("name");
+			transforma.SaveToFile();
 			break;
 		case 'b':
 			transforma.EditTranslator("years");
+			transforma.SaveToFile();
 			break;
 		case 'q':
 			return 0;
